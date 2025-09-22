@@ -6,7 +6,7 @@ const connectDB = async () => {
   if (isConnected) return; // Prevent multiple connections
 
   try {
-    const conn = await mongoose.connect("mongodb://localhost:27017/GetMeChai");
+    const conn = await mongoose.connect(process.env.Mongo_URL);
 
     isConnected = true;
     console.log(`MongoDB Connected: ${conn.connection.host}`);
